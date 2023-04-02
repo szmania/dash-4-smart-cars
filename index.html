@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <title>Smart Car by PubNub</title>
+
+    <link href="css/smart-car.css"        rel="stylesheet">
+    <link href="css/c3.min.css"           rel="stylesheet">
+    <link href="css/mapbox.css"           rel="stylesheet">
+    <link href="css/bootstrap.min.css"    rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+    <!-- DASHBOARD -->
+    <!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+    <div>
+        <div class="row">
+
+            <!-- TACHOMETER -->
+            <div class="col-xs-6 bg-magenta">
+                <div class="c3-widget">
+                    <div id="car-stat-chart-tachometer"></div>
+                </div>
+            </div>
+
+            <!-- MPH -->
+            <div class="col-xs-6 bg-green">
+                <div class="c3-widget">
+                    <div id="car-stat-chart-mph"></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+    <!-- MAPBOX -->
+    <!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+    <div id="mapbox"></div>
+
+    <!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+    <!-- DASHBOARD LOWER -->
+    <!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+    <div>
+        <div class="row">
+
+            <!-- TEMPERATURE -->
+            <div class="col-xs-3 bg-orange car-stat-value-area">
+                <div id="car-stat-temperature" class="car-stat-value">
+                    283<!--
+                --></div>
+                <div class="car-stat-label">temperature</div>
+            </div>
+
+            <!-- LATITUDE -->
+            <div class="col-xs-3 bg-teal car-stat-value-area">
+                <div id="car-stat-latitude" class="car-stat-value">
+                    120.03
+                </div>
+                <div class="car-stat-label">latitude</div>
+            </div>
+
+            <!-- LONGITUDE -->
+            <div class="col-xs-3 bg-yellow car-stat-value-area">
+                <div id="car-stat-longitude" class="car-stat-value">
+                    -12.383
+                </div>
+                <div class="car-stat-label">longitude</div>
+            </div>
+
+            <!-- DEBUG -->
+            <div class="col-xs-3 bg-pubnub">
+                <div id="car-stat-debug" class="car-stat-icon">
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+    <!-- EXAMPLE CODE -->
+    <!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+    <!-- 
+    <div class="container">
+        <pre>PUBNUB({
+    publish_key   : 'demo-36',
+    subscribe_key : 'demo-36'
+}).publish({
+    channel : 'smart-car',
+    message : {
+        tachometer : 4000,
+        mph        : 60
+    }
+})</pre>
+    </div>
+    -->
+
+
+    <!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+    <!-- APP CODE -->
+    <!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+    <script src="https://cdn.pubnub.com/pubnub.min.js"></script>
+    <script src="js/d3.min.js"></script>
+    <script src="js/c3.min.js"></script>
+    <script src="js/mapbox.min.js"></script>
+    <script src="js/smart-car.js"></script>
+    <script src="js/smart-car-map.js"></script>
+
+</body>
+</html>
+
+
